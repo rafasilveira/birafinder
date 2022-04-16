@@ -1,0 +1,6 @@
+export * from './add.svg'
+export * from './arrow.svg'
+export * from './chart.svg'
+export * from './location.svg'
+export * from './phone.svg'
+export * from './trash.svg'
