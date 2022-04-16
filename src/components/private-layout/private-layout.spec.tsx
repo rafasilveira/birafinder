@@ -1,17 +1,15 @@
 import { render, screen } from '@testing-library/react'
 import { PrivateLayout } from './private-layout.component'
 
-const mockedUsedNavigate = jest.fn()
-
 jest.mock('react-router-dom', () => ({
   ...(jest.requireActual('react-router-dom') as any),
-  useNavigate: () => mockedUsedNavigate,
+  useNavigate: () => jest.fn(),
 }))
 
 describe('<PrivateLayout />', () => {
   it('renders without crashing', () => {
     render(
-      <PrivateLayout>
+      <PrivateLayout userName="Chuck Norris">
         <h1>Hi, I'm a test</h1>
       </PrivateLayout>
     )
