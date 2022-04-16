@@ -1,13 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import reportWebVitals from './reportWebVitals'
-import { Reset } from 'styled-reset'
+import { App } from './modules/app/app.component'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
-    <Reset />
-    <h1>Hello</h1>
+    <App />
   </React.StrictMode>
 )
 
