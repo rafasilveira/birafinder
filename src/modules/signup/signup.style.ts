@@ -21,7 +21,7 @@ export const BackgroundStyled = styled.section`
   }
 `
 
-export const SignupFormStyled = styled.form`
+export const SignupFormStyled = styled.div`
   p {
     margin: 0 0 1.14em;
     font-size: 1rem;
@@ -74,7 +74,7 @@ export const SignupFormStyled = styled.form`
       cursor: pointer;
 
       &:hover {
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 5px 15px rgba(0, 0, 0, 0.25);
       }
     }
   }
