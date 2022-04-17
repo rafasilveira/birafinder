@@ -1,8 +1,7 @@
 import { FC, useState } from 'react'
 import { Tag } from '.'
-import { AddSvg } from '../../assets'
-import { CheckSvg } from '../../assets/check.svg'
-import { Input } from '../input/input.component'
+import { AddSvg, CheckSvg } from '../../assets'
+import { Input } from '../'
 import { ITagProps } from './tag.interface'
 import { TagStyled } from './tag.style'
 

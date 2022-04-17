@@ -29,6 +29,7 @@ export const Breweries: FC<{ children?: never }> = () => {
 
   return (
     <PrivateLayout userName={userName}>
+      {/* error state */}
       {error && (
         <Notification severity="error" title="Oops, something went wrong :(">
           There was an error loading the breweries. Please try again later.
@@ -37,6 +38,7 @@ export const Breweries: FC<{ children?: never }> = () => {
         </Notification>
       )}
 
+      {/* empty state */}
       {!breweries.length && (
         <NoBreweries
           handleGoBack={() => setPage(page - 1)}
@@ -46,6 +48,7 @@ export const Breweries: FC<{ children?: never }> = () => {
       )}
 
       <Cards>
+        {/* loading and default states */}
         {loading
           ? new Array(18)
               .fill('')
