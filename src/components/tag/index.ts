@@ -10,3 +10,5 @@ export const Tag = withLoading<ITagProps, ITagSkeletonProps>(
 )
 
 export { Tags } from './tag.style'
+
+export { TagInputComponent as TagInput } from './tag-input.component'

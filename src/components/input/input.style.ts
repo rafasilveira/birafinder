@@ -11,6 +11,9 @@ export const InputStyled = styled.input`
   outline: none;
 
   &.small {
-    
+    padding: 0px 4px;
+    margin: 0;
+    line-height: 1;
+    width: 83px;
   }
 `
