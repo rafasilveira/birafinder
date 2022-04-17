@@ -24,8 +24,8 @@ interface IBreweriesData {
   breweriesLoading: boolean
   breweriesError: Error | undefined
 
-  pagination: { page: number; limit: number }
-  setPagination: Dispatch<SetStateAction<{ page: number; limit: number }>>
+  page: number
+  setPage: Dispatch<SetStateAction<number>>
 
   removeBrewery: (id: string) => void
   addDataToBrewery: (id: string, data: string) => void
@@ -39,12 +39,12 @@ export const BreweriesProvider: FC<{ children?: ReactNode }> = ({
   const [userName, setUserName] = useState('')
   const [isUserAdult, setIsUserAdult] = useState(false)
 
-  const [pagination, setPagination] = useState({ page: 1, limit: 20 })
+  const [page, setPage] = useState(1)
   const {
     data,
     error: breweriesError,
     isValidating: breweriesLoading,
-  } = useBreweries(pagination)
+  } = useBreweries({ page, limit: 18 })
 
   useEffect(() => {
     console.log('data', data)
@@ -62,8 +62,8 @@ export const BreweriesProvider: FC<{ children?: ReactNode }> = ({
         breweriesLoading,
         breweriesError,
 
-        pagination,
-        setPagination,
+        page,
+        setPage,
 
         removeBrewery: (id: string) => console.log(`removing ${id}`),
         addDataToBrewery: (id: string, data: string) =>

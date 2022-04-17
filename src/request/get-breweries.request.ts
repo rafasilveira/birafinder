@@ -7,6 +7,7 @@ const getUrl = ({ page = 1, limit = 20 }: IGetBreweriesParams) => {
 
   url.searchParams.append('page', page.toString())
   url.searchParams.append('per_page', limit.toString())
+  url.searchParams.append('sort', 'name:asc')
 
   return url.href
 }
