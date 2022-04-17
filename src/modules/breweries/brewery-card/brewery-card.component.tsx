@@ -1,17 +1,9 @@
 import { FC } from 'react'
 import { AddSvg, ChartSvg, LocationSvg, PhoneSvg } from '../../../assets'
-import { Card, ICardProps, Tag, Tags } from '../../../components'
+import { Card, Tag, Tags } from '../../../components'
+import { IBreweryCardProps } from './brewery-card.interface'
 
-export interface IBreweryCardProps extends Omit<ICardProps, 'children'> {
-  size: string
-  location: string
-  phone: string
-  extra?: string
-  handleAddExtra: (text: string) => void
-  children?: never
-}
-
-export const BreweryCard: FC<IBreweryCardProps> = ({
+export const BreweryCardComponent: FC<IBreweryCardProps> = ({
   title,
   subtitle,
   size,

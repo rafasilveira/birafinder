@@ -1,11 +1,15 @@
 import { render, screen } from '@testing-library/react'
-import { BreweryCard } from './brewery-card.component'
+import { BreweryCard } from './index'
 
 describe('<BreweryCard />', () => {
   it('renders without crashing', () => {
     const onDelete = jest.fn()
     const onAdd = jest.fn()
 
+    // loading
+    render(<BreweryCard loading />)
+
+    // default
     render(
       <BreweryCard
         title="Test title"

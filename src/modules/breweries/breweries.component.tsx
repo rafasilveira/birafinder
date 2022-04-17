@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { Cards, PrivateLayout } from '../../components'
 import { useBreweriesContext } from '../../context/breweries.context'
-import { BreweryCard } from './brewery-card/brewery-card.component'
+import { BreweryCard } from './brewery-card'
 
 export const Breweries: FC<{ children?: never }> = () => {
   const {
