@@ -1,6 +1,6 @@
 import { FC } from 'react'
-import { AddSvg, ChartSvg, LocationSvg, PhoneSvg } from '../../../assets'
-import { Card, Tag, Tags } from '../../../components'
+import { ChartSvg, LocationSvg, PhoneSvg } from '../../../assets'
+import { Card, Tag, TagInput, Tags } from '../../../components'
 import { IBreweryCardProps } from './brewery-card.interface'
 
 export const BreweryCardComponent: FC<IBreweryCardProps> = ({
@@ -9,7 +9,7 @@ export const BreweryCardComponent: FC<IBreweryCardProps> = ({
   size,
   location,
   phone,
-  handleDelete
+  handleDelete,
 }) => {
   return (
     <Card
@@ -21,7 +21,7 @@ export const BreweryCardComponent: FC<IBreweryCardProps> = ({
         <Tag icon={<ChartSvg />} text={size} />
         <Tag icon={<LocationSvg />} text={location} />
         <Tag icon={<PhoneSvg />} text={phone} />
-        <Tag icon={<AddSvg />} text="add more" />
+        <TagInput onSubmitText={(s) => console.log(s)} typedText={''} />
       </Tags>
     </Card>
   )
