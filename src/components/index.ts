@@ -8,5 +8,4 @@ export * from './tag/tag.component'
 export { Tags } from './tag/tag.style'
 
 // cards
-export * from './card/card.component'
-export { Cards } from './card/card.style'
+export * from './card'

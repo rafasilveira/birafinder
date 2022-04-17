@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react'
-import { Card } from './card.component'
+import { Card } from './'
 
 describe('<Card />', () => {
-  it('renders without crashing', () => {
+  it('renders default component without crashing', () => {
     const onDelete = jest.fn()
 
     render(
@@ -15,5 +15,15 @@ describe('<Card />', () => {
     expect(screen.getByText('Subtitle')).toBeInTheDocument()
     expect(screen.getByText('Super awesome card body')).toBeInTheDocument()
     expect(screen.getByTitle('delete')).toBeInTheDocument()
+  })
+
+  it('renders skeleton component without crashing', () => {
+    render(
+      <Card loading title subtitle>
+        <p>Super awesome card body</p>
+      </Card>
+    )
+
+    expect(screen.getByText('Super awesome card body')).toBeInTheDocument()
   })
 })

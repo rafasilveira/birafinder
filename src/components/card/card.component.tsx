@@ -1,15 +1,11 @@
-import { FC, ReactNode } from 'react'
+import { FC } from 'react'
 import { TrashSvg } from '../../assets'
+import { ICardProps } from './card.interface'
 import { CardStyled } from './card.style'
 
-export interface ICardProps {
-  title: string
-  subtitle?: string
-  children: ReactNode
-  handleDelete?: () => void
-}
 
-export const Card: FC<ICardProps> = ({
+
+export const CardComponent: FC<ICardProps> = ({
   title,
   subtitle,
   children,
