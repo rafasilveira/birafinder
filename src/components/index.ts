@@ -8,3 +8,6 @@ export * from './tag'
 
 // cards
 export * from './card'
+
+//input
+export { Input } from './input/input.component'
