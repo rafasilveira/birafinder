@@ -20,6 +20,15 @@ export const Signup: FC<{ children?: never }> = () => {
     }
   }, [isUserAdult, userName.length])
 
+  // clear username and checkbox when user returns to home screen
+  useEffect(() => {
+    setUserName("")
+    setIsUserAdult(false)
+    setButtonEnabled(false)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+  
+
   const handleSubmit = useCallback(() => {
     if (buttonEnabled) {
       navigate('/breweries')
