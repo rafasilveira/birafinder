@@ -7,4 +7,9 @@ export const PrivateLayoutStyled = styled.main`
   padding-top: calc(70px + ${GAP_PROPORTION}vw);
   background: #fffef0;
   min-height: 100vh;
+
+  @media only screen and (max-width: 1380px) {
+  padding: ${GAP_PROPORTION/2}vw;
+  padding-top: calc(70px + ${GAP_PROPORTION/2}vw);
+  }
 `

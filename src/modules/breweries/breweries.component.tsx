@@ -1,7 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { FC } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Card, Cards, Pagination, PrivateLayout } from '../../components'
+import {
+  Cards,
+  Notification,
+  Pagination,
+  PrivateLayout,
+} from '../../components'
 import { useBreweriesContext } from '../../context/breweries.context'
 import { BreweryCard } from './brewery-card'
 import { NoBreweries } from './no-breweries/no-breweries.component'
@@ -24,7 +29,13 @@ export const Breweries: FC<{ children?: never }> = () => {
 
   return (
     <PrivateLayout userName={userName}>
-      {error && <p>Error loading breweries :(</p>}
+      {error && (
+        <Notification severity="error" title="Oops, something went wrong :(">
+          There was an error loading the breweries. Please try again later.
+          <br />
+          {error.message}
+        </Notification>
+      )}
 
       {!breweries.length && (
         <NoBreweries
