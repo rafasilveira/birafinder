@@ -16,6 +16,8 @@ export const HeaderStyled = styled.header`
   font-size: 2.14rem;
   line-height: 1.5em;
 
+  z-index: 100;
+
   .back {
     background: transparent;
     border: none;

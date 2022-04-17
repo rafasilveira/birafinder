@@ -27,4 +27,5 @@ export const TagStyled = styled.div`
 export const Tags = styled.div`
   display: flex;
   flex-wrap: wrap;
+  margin-top: auto;
 `

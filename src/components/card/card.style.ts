@@ -6,6 +6,8 @@ export const CardStyled = styled.div`
   border-radius: 4px;
   position: relative;
   padding: 30px 23px 0;
+  display: flex;
+  flex-direction: column;
 
   & > .title {
     font-size: 1.428rem;
