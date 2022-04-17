@@ -6,8 +6,8 @@ import {
   Routes,
 } from 'react-router-dom'
 
-const Signup = lazy(() => import('../signup/signup.component'))
-const Breweries = lazy(() => import('../breweries/breweries.component'))
+const Signup = lazy(() => import('../modules/signup/signup.component'))
+const Breweries = lazy(() => import('../modules/breweries/breweries.component'))
 
 export const ApplicationRouter: FC<{ children?: never }> = () => (
   <Router>

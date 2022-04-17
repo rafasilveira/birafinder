@@ -1,7 +1,7 @@
 import { FC, Suspense } from 'react'
 import { Reset } from 'styled-reset'
 import { BreweriesProvider } from '../../context/breweries.context'
-import { ApplicationRouter } from '../routes/application-router.component'
+import { ApplicationRouter } from '../../routes/application-router.component'
 import SignupBackground from '../signup/background.component'
 import GlobalStyle from './app.style'
 
