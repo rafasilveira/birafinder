@@ -18,9 +18,9 @@ export const BreweryCardComponent: FC<IBreweryCardProps> = ({
       handleDelete={() => handleDelete?.()}
     >
       <Tags>
-        <Tag icon={<ChartSvg />} text={size} />
-        <Tag icon={<LocationSvg />} text={location} />
-        <Tag icon={<PhoneSvg />} text={phone} />
+        <Tag icon={<ChartSvg />} text={size || '-'} />
+        <Tag icon={<LocationSvg />} text={location || '-'} />
+        <Tag icon={<PhoneSvg />} text={phone || '-'} />
         <TagInput onSubmitText={(s) => console.log(s)} typedText={''} />
       </Tags>
     </Card>

@@ -22,6 +22,7 @@ export const HeaderStyled = styled.header`
     background: transparent;
     border: none;
     padding: 0;
+    color: #000;
     font: inherit;
 
     display: flex;
