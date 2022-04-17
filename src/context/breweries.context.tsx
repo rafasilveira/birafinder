@@ -39,6 +39,8 @@ export const BreweriesProvider: FC<{ children?: ReactNode }> = ({
   const [userName, setUserName] = useState('')
   const [isUserAdult, setIsUserAdult] = useState(false)
 
+  const [breweries, setBreweries] = useState<IBrewery[]>([])
+
   const [page, setPage] = useState(1)
   const {
     data,
@@ -46,8 +48,12 @@ export const BreweriesProvider: FC<{ children?: ReactNode }> = ({
     isValidating: breweriesLoading,
   } = useBreweries({ page, limit: 18 })
 
+  const handleRemoveBrewery = (id: string) => {
+    setBreweries((breweries) => breweries.filter((b) => b.id !== id))
+  }
+
   useEffect(() => {
-    console.log('data', data)
+    setBreweries(data ?? [])
   }, [data])
 
   return (
@@ -58,14 +64,14 @@ export const BreweriesProvider: FC<{ children?: ReactNode }> = ({
         setUserName,
         setIsUserAdult,
 
-        breweries: data ?? ([] as IBrewery[]),
+        breweries,
         breweriesLoading,
         breweriesError,
 
         page,
         setPage,
 
-        removeBrewery: (id: string) => console.log(`removing ${id}`),
+        removeBrewery: handleRemoveBrewery,
         addDataToBrewery: (id: string, data: string) =>
           console.log(`addin ${data} to ${id}`),
       }}

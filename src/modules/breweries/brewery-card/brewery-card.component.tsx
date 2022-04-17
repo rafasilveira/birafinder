@@ -9,12 +9,13 @@ export const BreweryCardComponent: FC<IBreweryCardProps> = ({
   size,
   location,
   phone,
+  handleDelete
 }) => {
   return (
     <Card
       title={title}
       subtitle={subtitle}
-      handleDelete={() => console.log(`deleting card ${title}`)}
+      handleDelete={() => handleDelete?.()}
     >
       <Tags>
         <Tag icon={<ChartSvg />} text={size} />

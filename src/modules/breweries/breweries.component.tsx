@@ -12,12 +12,14 @@ export const Breweries: FC<{ children?: never }> = () => {
     breweriesLoading: loading,
 
     page,
+    removeBrewery,
     setPage,
   } = useBreweriesContext()
 
   return (
     <PrivateLayout userName={userName}>
       <Cards>
+        {error && <p>Error loading breweries :(</p>}
         {loading
           ? new Array(18)
               .fill('')
@@ -32,6 +34,7 @@ export const Breweries: FC<{ children?: never }> = () => {
                 phone={brewery.phone}
                 location={brewery.postal_code}
                 handleAddExtra={() => console.log('adding 123')}
+                handleDelete={() => removeBrewery(brewery.id)}
               />
             ))}
       </Cards>
