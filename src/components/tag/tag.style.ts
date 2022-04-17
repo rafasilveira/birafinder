@@ -19,6 +19,7 @@ export const TagStyled = styled.div`
 
   .text {
     font: inherit;
+    flex-grow: 1;
     margin-left: 0.5em;
     line-height: 1.5em;
   }

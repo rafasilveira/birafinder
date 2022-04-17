@@ -4,8 +4,7 @@ export * from './header/header.component'
 export * from './private-layout/private-layout.component'
 
 // tags
-export * from './tag/tag.component'
-export { Tags } from './tag/tag.style'
+export * from './tag'
 
 // cards
 export * from './card'
