@@ -9,5 +9,10 @@ export * from './tag'
 // cards
 export * from './card'
 
-//input
+// input
 export { Input } from './input/input.component'
+
+// pagination
+export { Pagination } from './pagination/pagination.component'
+
+export { Notification } from './notification/notification.component'
