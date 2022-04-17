@@ -1,8 +1,10 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { FC } from 'react'
-import { Cards, PrivateLayout } from '../../components'
-import { Pagination } from '../../components/pagination/pagination.component'
+import { useNavigate } from 'react-router-dom'
+import { Card, Cards, Pagination, PrivateLayout } from '../../components'
 import { useBreweriesContext } from '../../context/breweries.context'
 import { BreweryCard } from './brewery-card'
+import { NoBreweries } from './no-breweries/no-breweries.component'
 
 export const Breweries: FC<{ children?: never }> = () => {
   const {
@@ -12,14 +14,27 @@ export const Breweries: FC<{ children?: never }> = () => {
     breweriesLoading: loading,
 
     page,
-    removeBrewery,
     setPage,
+    refreshPage,
+
+    removeBrewery,
   } = useBreweriesContext()
+
+  const navigate = useNavigate()
 
   return (
     <PrivateLayout userName={userName}>
+      {error && <p>Error loading breweries :(</p>}
+
+      {!breweries.length && (
+        <NoBreweries
+          handleGoBack={() => setPage(page - 1)}
+          handleQuit={() => navigate('/')}
+          handleRefresh={() => refreshPage()}
+        />
+      )}
+
       <Cards>
-        {error && <p>Error loading breweries :(</p>}
         {loading
           ? new Array(18)
               .fill('')

@@ -26,6 +26,7 @@ interface IBreweriesData {
 
   page: number
   setPage: Dispatch<SetStateAction<number>>
+  refreshPage: () => void
 
   removeBrewery: (id: string) => void
   addDataToBrewery: (id: string, data: string) => void
@@ -47,6 +48,8 @@ export const BreweriesProvider: FC<{ children?: ReactNode }> = ({
     error: breweriesError,
     isValidating: breweriesLoading,
   } = useBreweries({ page, limit: 18 })
+
+  const refreshPage = () => setBreweries(data ?? [])
 
   const handleRemoveBrewery = (id: string) => {
     setBreweries((breweries) => breweries.filter((b) => b.id !== id))
@@ -70,6 +73,7 @@ export const BreweriesProvider: FC<{ children?: ReactNode }> = ({
 
         page,
         setPage,
+        refreshPage,
 
         removeBrewery: handleRemoveBrewery,
         addDataToBrewery: (id: string, data: string) =>
