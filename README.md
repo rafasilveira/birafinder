@@ -15,7 +15,7 @@ yarn start
 
 ## Concerning my solution
 
-> **TL;DR: ** TypeScript, React, CRA, Styled-Components, default test suite, SWR, context API
+> **TL;DR:** TypeScript, React, CRA, Styled-Components, default test suite, SWR, context API
   
 Given that this is a simple project, but it's also a code _challenge_ in which I'll be evaluated, I've chosen to go with a balance between simplicity and robustness. To avoid unneeded configurations, I've started my project with **Create-React-App** and the **Typescript** template, since it provides out-of-the-box basic linting, test suite, dev server, and so on. I'm also using **Styled-Components** for convenience and dynamic styles, as well as to simplify some component declarations. **SWR** allows better request handling (cache and error/loading state management). **Context API** handles my data layer. Since this is a weekend project and it won't receive contributions by other developers, I didn't bother setting up pre-commit hooks to guarantee style consistency. I trust myself, lol.
 
@@ -23,7 +23,7 @@ Given that this is a simple project, but it's also a code _challenge_ in which I
 My application follows a simple folder structure, mostly based on Angular styleguide and React common practices, where files are grouped by the purpose they serve and named according to what they are. There's also some barrels on key folders to simplify importing. The following table presents my `svg` folder structure, alphabetically.
 
 folder | description
---- | --- | ---
+--- | ---
 assets | All SVG files used in the project. They're written as React components to simplify importing and to preserve `svg` html tag. 
 components | All stateless components. The building blocks used on the project. 
 context | Handles the application data
